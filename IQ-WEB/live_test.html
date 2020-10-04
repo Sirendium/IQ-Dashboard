@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+    <title>Live View</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="Styles/live1.css">
+	<script src="AC_RunActiveContent.js" language="javascript"></script>	
+    <!-- Framework CSS -->
+
+
+    <script language="javascript">AC_FL_RunContent = 0;</script>
+
+
+    <!-- Libraries -->
+
+    <!-- DASH-AVC/265 reference implementation -->
+    <script src="js/shaka-player.js"></script>
+
+    <!-- Framework CSS -->
+    <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="css/wowza.css" type="text/css" />
+	<link rel="stylesheet" href="Styles/bacground-gray.css" type="text/css" />
+    <script>
+        function supports_media_source()
+        {
+            "use strict";
+            var hasWebKit = (window.WebKitMediaSource !== null && window.WebKitMediaSource !== undefined),
+                hasMediaSource = (window.MediaSource !== null && window.MediaSource !== undefined);
+            return (hasWebKit || hasMediaSource);
+        }
+    </script>
+
+</head>
+<body>
+	<div id="Top">
+<a href="index.php"><img src="Images/menu1.png" width="50px" height="50px"></a><strong id="Text">LIVE VIEW</strong>
+<img id="grid_1" src="Images/grid1.png" width="50px" height="50px">
+<img id="grid_2" src="Images/grid2.png" width="50px" height="50px">
+<img id="grid_3" src="Images/grid3.png" width="50px" height="50px">
+<img id="grid_4" src="Images/grid4.png" width="50px" height="50px">
+</div>
+<div id="Top_2">
+<img src="Images/alarms.png "width="50px" height="50px"><strong id ="Text">ALARMS</strong>
+<img  id="logo_t" src="Images/logo_white.png" width="150px" height="50px">
+</div>
+<br><br><br><br>
+<div id="Box">
+
+    <div class="container">
+        <!-- HEADER -->
+        
+        
+ 
+        <!-- END HEADER -->
+        <!-- EXAMPLE PLAYER: WIDTH of this player should be 630px, height will vary depending on the example-->
+        <div class="span-16">
+          
+            <div id="supported" style="display:none">
+                <div>
+                    <style>
+                        video {
+                            background-color: #000000;
+                        }
+                    </style>
+                    <video id="videoObj" x-webkit-airplay="allow" controls alt="Example File" width="48%" height="300" autoplay></video>
+                      <style>
+                        video {
+                            background-color: #000000;
+                        }
+                    </style>
+                    <video id="videoObj" x-webkit-airplay="allow" controls alt="Example File" width="48%" height="300" autoplay></video>
+                </div>
+                <table>
+                 
+                        <td>
+                        	     <b>Stream URL:</b>
+                            <input style="width: 25%" id="connectStr" size = "30" type="text" placeholder="" value="http://192.168.1.106:1935/Live/MyCam.stream/manifest.mpd"/>
+                            <button id="connectObj" type="button" style="width:50px;background-color: black;color: white;"onclick="JavaScript:connect()">Start</button>
+                             <b>Stream URL:</b>
+                            <input style="width: 25%" id="connectStr1" size = "30" type="text" placeholder="" value="http://192.168.1.106:1935/Live/MyCam.stream/manifest.mpd"/>
+                            <button id="connectObj1" type="button" style="width:50px;background-color: black;color: white;" onclick="JavaScript:connect1()">Start</button>
+                        </td>
+                    
+                  
+                </table>
+            
+                  
+        
+            </div>
+			 <p id="box_size_height"></p>
+		
+         
+
+        <script>
+            if ( supports_media_source() ) {
+                supported.style.display="";
+                videoObj.style.display="";
+            }
+            else {
+                notsupported.style.display="";
+            }
+		var video;
+		var player;
+		var source; 
+		var estimator;
+
+            function connect()
+            {
+                if(connectObj.textContent == "Stop") 
+			{
+			dashStop();
+			connectObj.textContent = "Start";
+		
+                	}
+                else {
+
+                        connectObj.textContent = "Stop";
+                     
+                        if ( video == null )
+                        { video = document.querySelector("video"); }
+
+                        if ( player == null )
+                        { player = new shaka.player.Player(video); }
+
+                        // Attach the player to the window so that it can be easily debugged.
+                        window.player = player;
+
+                        // Listen for errors from the Player.
+                        player.addEventListener('error', failed );
+
+                        // Construct a DashVideoSource to represent the DASH manifest.
+                        //var mpdUrl = 'http://turtle-tube.appspot.com/t/t2/dash.mpd';
+                        if ( estimator != null )
+			{ estimator=null; }
+                        estimator = new shaka.util.EWMABandwidthEstimator();
+
+                        if ( source != null )
+                        { source = null; }
+
+                        source = new shaka.player.DashVideoSource(connectStr.value, null, estimator);
+
+                        // Load the source into the Player.
+                        player.load(source);
+                	}
+            }
+
+	function failed(e)
+	{
+	var done = false;
+	if ( e.detail == 'Error: Network failure.' )
+		{
+		statusStr.textContent = 'Network Connection Failed.';
+		done = true;
+		}
+        if ( e.detail.status!=200 && done == false )
+                {
+		switch ( e.detail.status )
+			{
+			case 404:
+			statusStr.textContent = e.detail.url+' not found.';
+			break;
+			default:
+	                statusStr.textContent = 'Error '+e.detail.status+' for '+e.detail.url;
+			break;
+                	}
+		}
+        }
+
+	function dashStop()
+	{
+		if(player!=null)
+		{
+		player.unload();
+		}
+	connectObj.textContent = "Start";
+	statusStr.textContent = "Disconnected";
+	}
+            </script>
+        </div>
+        <!-- SIDEBAR -->
+        
+        </div>
+        <!-- END FOOTER -->
+    </div>
+
+    </div>
+    <div id="Box_1">
+<p id="box_size_height_1"></p>
+</div><br><br>
+<div id="bottom_s">
+<img src="Images/image.png" width="50px" height="50px">
+<img src="Images/status.png" width="50px" height="50px">
+<img src="Images/Logs.png" width="50px" height="50px">
+</div>
+
+</body>
+</html>

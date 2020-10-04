@@ -1,0 +1,39 @@
+#avaible{
+margin-left: 9%;
+background-color: silver;
+padding-bottom: 20%;
+width: 20%;
+border-radius: 20px;
+float: left;
+}
+#text_f{
+	color: white;
+	font-size: 20px;
+	margin-left: 10%;
+}
+#text_f1{
+	color: white;
+	font-size: 20px;
+	margin-left: 10%;
+}
+#text_x{
+	color: white;
+	font-size: 15px;
+	margin-left: 10%;
+}
+#active{
+background-color: silver;
+padding-bottom: 20%;
+width: 20%;
+border-radius: 20px;
+float: left;
+margin-left: 8%;
+}
+#info{
+	border: solid white 2px;
+	width: 20%;
+	float: right;
+	padding-bottom: 20%;
+	border-radius: 20px;
+	margin-right: 16.5%;
+}

@@ -1,0 +1,41 @@
+body{
+	background-color: gray;
+}
+#logo{
+	float: right;
+}
+#text_g{
+	font-size: 30px;
+	color: white;
+}
+#box_n{
+	margin-top: 4%;
+	border: solid 2px white;
+	border-radius: 12px;
+	float: left;
+	width: 40%;
+	padding-bottom: 20%;
+}
+#text_f{
+	color: white;
+	font-size: 15px;
+margin-left: 2%;
+}
+#text_field{
+	background-color: silver;
+	color: white;
+	margin-left: 5%;
+
+}
+#text_f_1{
+	color: white;
+	font-size: 15px;
+margin-left: 23%;
+}
+#box_nb{
+		margin-top: 4%;
+	border: solid 2px white;
+	border-radius: 12px;
+	float: right;	
+	width: 55%;
+}

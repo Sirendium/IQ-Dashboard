@@ -12,7 +12,7 @@
 	<a  href="detects.php"><img src="Custom_files/g1.png" id="menu"></a>
 	<a href="monitoring.php"><img src="Custom_files/g2.png" id="menu"></a>
 	<a href="radar.php"><img src="Custom_files/g3.png" id="menu"></a>
-	<a href="cctv.php"><img src="Custom_files/g4.png" id="menu"></a>
+	<a href="IQ-WEB/index.php"><img src="Custom_files/g4.png" id="menu"></a>
 <div id="content" >
 <form method="POST">
 	<h1 id="Zaglavie">Login</h1>

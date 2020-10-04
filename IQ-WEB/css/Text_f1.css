@@ -1,0 +1,38 @@
+#text_f1{
+	color: white;
+	padding-left: 5%;
+	font-size: 16px;
+text-align: center;
+}
+#text_info_cam{
+	color: white;
+	float: left;
+}
+#text_device_type{
+	color: white;
+	float: left;
+	margin-left: 5%;
+}
+#text_f11{
+color: white;
+font-size: 16px;
+text-align: center;
+}
+#text_port{
+		color: white;
+	float: left;
+	margin-left: 12%;
+}
+#text_stream_url{
+	font-size: 8px;
+	color: white;
+}
+
+#panel{
+	width: 75%;
+}
+#universal.Camera{
+	color: red;
+	font-size: 15px;
+	text-align: center;
+}
