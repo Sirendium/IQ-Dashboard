@@ -17,19 +17,18 @@ body{
 	margin-left: 2%;
 }
 #Zaglavie{
-	color: gold;
+	color: white;
 	font-size: 36px;
-	font-family: LobsterRegular;
 }
 #BigHeder{ 
 	margin-left: 1%;
 	color: white;
 	font-size: 18px;
-	font-family: LobsterRegular;
+
 }
 #footer{
 	padding-top: 1%;
-	background-color: gray;
+	background-color: #538cc6;
 	   -moz-background-size: 100%; /* Firefox 3.6+ */
     -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
     -o-background-size: 100%; /* Opera 9.6+ */
@@ -43,7 +42,6 @@ body{
     -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
     -o-background-size: 100%; /* Opera 9.6+ */
     background-size: 100%; /* Современные браузеры */
-    text-align: center;
     padding-bottom: 28%; 
 }
 #menu{
@@ -55,21 +53,29 @@ border-radius: 15%;
 
 }
 #button_login{
-	background-color: #a9a29e;
+	background-color: silver;
 	font-size: 19px;
-	color: gold;
-	font-weight: bold;
+	color: white;
 
 }
 #logining_page{
 
 }
 #InfoBox{
+
 	font-size: 17px;
-	color: gold;
+	color: white;
 	font-weight: bold;
 	padding-top: 1%;
 	padding-bottom: 1%;
 	margin-left: 2%;
+
+}
+#background_fon_image_1{
+	float: left;
+
+}
+#background_fon_image_3{
+
 
 }
